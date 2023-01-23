@@ -1,5 +1,6 @@
 package org.simplilearn;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -9,19 +10,40 @@ public class Main {
         String user_input;
         String add_content;
         Boolean res;
+        int searchresult;
         System.out.println("LockedMe.com application...Welcome!");
         System.out.println("****Powered by: John Edem Adamfo****");
         Label_entry:
         while(true){
-            Label_mainMenu:
-            System.out.println("Press '1' to add a file\n" +
-                    "Press '2' to delete a file\n" +
-                    "Press '3' to search for a file\n" +
-                    "Press '4' to move back to the main menu\n" +
-                    "Press 'q' to exit the application\n");
+//            Label_mainMenu:
+            System.out.println("Press '1' to list all files\n" +
+                    "Press '2' to add a file\n" +
+                    "Press '3' to delete for a file\n" +
+                    "Press '4' to search for a file\n" +
+                    "Press 'q' to exit the application");
             user_input=sc.nextLine().toLowerCase();
             switch (user_input){
                 case "1":
+                    try {
+                        List<String> result= fileManipulation.listFiles();
+                        if(result.size()>0) {
+                            //System.out.println(result);
+                            for(String a:result){
+                                System.out.println(a.substring(53));
+                            }
+
+                            //break;
+                        }else{
+                            System.out.println("Empty directory...no files to display");
+                            //break;
+                        }
+                    }catch (Exception e){
+                        System.out.println("An error occurred during file manipulation");
+                        e.printStackTrace();
+                    }finally {
+                        break;
+                    }
+                case "2":
                     System.out.println("Please enter the name of the new file you want to add");
                     user_input=sc.nextLine();
                     System.out.println("Type content you want to add to your file...otherwise just press the enter key");
@@ -34,7 +56,9 @@ public class Main {
                         }
 
                         if (res){
+                            System.out.println("********************************");
                             System.out.println("File created successfully.");
+                            System.out.println("********************************\n");
                         }else{
                             System.out.println("File already exists..you may want to choose a different file name");
                         }
@@ -45,7 +69,7 @@ public class Main {
                         break;
                     }
 
-                case "2":
+                case "3":
                     System.out.println("Please enter the name of the file you want to delete");
                     user_input=sc.nextLine();
                     try {
@@ -68,12 +92,27 @@ public class Main {
                     }
 
                     //break;
-                case "3":
-
-                    break;
                 case "4":
+                    System.out.println("Please enter the name of the file to be searched");
+                    user_input=sc.nextLine();
+                    try {
+                        if(!user_input.isEmpty()) {searchresult = fileManipulation.searchFile(user_input);
+                        }else{
+                            System.out.println("You need to enter a file to be searched");
+                            break;
+                        }
+                        if (searchresult>=0){
+                            System.out.printf("The file has been found successfully at index %s.\n",searchresult);
+                        }else{
+                            System.out.println("File not found");
+                        }
+                    }catch (Exception e){
+                        System.out.println("An error occurred during file manipulation");
+                        e.printStackTrace();
+                    }finally {
+                        break;
+                    }
 
-                    break;
                 case "q":
                     break Label_entry;
             }
