@@ -66,9 +66,6 @@ public class FileManipulation {
                         Collections.sort(filelist);
                         //System.out.println("filelist here "+filelist);
                         res=Collections.binarySearch(filelist,target);
-                        //System.out.println("Result after search "+res);
-
-
                 //Arrays.sort(fileArr,Collections.reverseOrder());
 
                 //res=Arrays.binarySearch(fileArr,target);
@@ -92,5 +89,9 @@ public class FileManipulation {
             }
         }
         return filelist;
+    }
+
+    public void displayMessage(String msg) {
+        System.out.printf("******************************************\n"+msg+"\n******************************************\n");
     }
 }
