@@ -27,9 +27,9 @@ public class Main {
                     try {
                         List<String> result= fileManipulation.listFiles();
                         if(result.size()>0) {
-                            //System.out.println(result);
                             for(String a:result){
-                                System.out.println(a.substring(53));
+                                int position=a.lastIndexOf("\\");
+                                System.out.println(a.substring(position+1));
                             }
 
                             //break;

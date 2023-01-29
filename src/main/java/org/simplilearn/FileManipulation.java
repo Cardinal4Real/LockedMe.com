@@ -52,7 +52,8 @@ public class FileManipulation {
     int searchFile(String filename) throws IOException {
         int res=-1;
         String target=base_directory+"\\"+filename;
-        File file=new File(base_directory);
+        List<String> filelist=listFiles();
+/*        File file=new File(base_directory);
         List<String> filelist=new ArrayList<>();
         if(file.isDirectory()){
 
@@ -61,7 +62,7 @@ public class FileManipulation {
                     if(!a.getName().startsWith(".")){       //excluding hidden files
                         filelist.add(String.valueOf(a));
                     }
-                }
+                }*/
                         Collections.sort(filelist);
                         //System.out.println("filelist here "+filelist);
                         res=Collections.binarySearch(filelist,target);
@@ -72,11 +73,10 @@ public class FileManipulation {
 
                 //res=Arrays.binarySearch(fileArr,target);
                 //Collections.binarySearch(fileArr)
-
+        return res;
             }
 
-    return res;
-    }
+
 
     public List<String> listFiles() {
         File file=new File(base_directory);
@@ -85,7 +85,9 @@ public class FileManipulation {
             File fileArr[]=file.listFiles();
             for(File a:fileArr){
                 if(!a.getName().startsWith(".")){       //excluding hidden files
-                    filelist.add(String.valueOf(a));
+                    if(!a.isDirectory()){               //excluding directories as well
+                        filelist.add(String.valueOf(a));
+                    }
                 }
             }
         }
