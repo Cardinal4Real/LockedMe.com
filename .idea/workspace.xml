@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="63836a15-656f-4a6a-b53b-7e7d750250cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adora" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/simplilearn/FileManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/simplilearn/FileManipulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/simplilearn/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/simplilearn/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasklist.ppt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +46,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/cardi/workspace/projects/LockedMe.com",
+    "jdk.selected.JAVA_MODULE": "openjdk-19",
+    "last_opened_file_path": "C:/Users/john.adamfo/Workspace/projects/USSDdemo",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RunManager">

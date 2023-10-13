@@ -29,6 +29,7 @@ public class FileManipulation {
     Boolean addFile(String filename,String content) throws IOException {
         String target=base_directory+"\\"+filename;
         File file=new File(target);
+        //File fi2=new File(base_directory,filename);
         if(!file.exists()){
             FileWriter fw=new FileWriter(file);
             fw.write(content);
@@ -64,7 +65,6 @@ public class FileManipulation {
                     }
                 }*/
                         Collections.sort(filelist);
-                        //System.out.println("filelist here "+filelist);
                         res=Collections.binarySearch(filelist,target);
                 //Arrays.sort(fileArr,Collections.reverseOrder());
 

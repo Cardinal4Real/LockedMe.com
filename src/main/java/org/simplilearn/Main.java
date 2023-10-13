@@ -7,8 +7,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         FileManipulation fileManipulation = new FileManipulation();
-        String user_input;
-        String user_input_sm;
+        String user_input,user_input_sm;
+        //String user_input_sm;
         String add_content;
         String msg;
         Boolean res;
